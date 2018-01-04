@@ -155,6 +155,8 @@ SOURCES += aboutdialog.cpp \
     newmapdialog.cpp \
     newtilesetdialog.cpp \
     objectgroupitem.cpp \
+    objectiddialog.cpp \
+    objectidedit.cpp \
     objectsdock.cpp \
     objectselectionitem.cpp \
     objectselectiontool.cpp \
@@ -221,9 +223,7 @@ SOURCES += aboutdialog.cpp \
     zoomable.cpp \
     clickablelabel.cpp \
     imagecolorpickerwidget.cpp \
-    reversingproxymodel.cpp \
-    objectiddialog.cpp \
-    objectidedit.cpp
+    reversingproxymodel.cpp
 
 HEADERS += aboutdialog.h \
     abstractobjecttool.h \
