@@ -41,8 +41,19 @@ struct FilePath {
     QString absolutePath;
 };
 
-struct ObjectId {
-    int id;
+class ObjectId
+{
+public:
+    ObjectId() : mId(0)
+    {}
+
+    ObjectId(int id) : mId(id)
+    {}
+
+    int id() const { return mId; }
+
+private:
+    int mId;
 };
 
 /**

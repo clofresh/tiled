@@ -105,7 +105,7 @@ QWidget *VariantEditorFactory::createEditor(QtVariantPropertyManager *manager,
     if (type == objectIdTypeId()) {
         auto editor = new ObjectIdEdit(parent);
         ObjectId objectId = manager->value(property).value<ObjectId>();
-        editor->setId(objectId.id);
+        editor->setId(objectId.id());
         mCreatedObjectIdEdits[property].append(editor);
         mObjectIdEditToProperty[editor] = property;
 

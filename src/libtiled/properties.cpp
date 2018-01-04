@@ -113,7 +113,7 @@ QVariant toExportValue(const QVariant &value)
     if (type == filePathTypeId())
         return value.value<FilePath>().absolutePath;
     if (type == objectIdTypeId())
-        return value.value<ObjectId>().id;
+        return value.value<ObjectId>().id();
 
     return value;
 }
@@ -140,7 +140,7 @@ QVariant fromExportValue(const QVariant &value, int type)
         return QVariant::fromValue(FilePath { value.toString() });
 
     if (type == objectIdTypeId())
-        return QVariant::fromValue(ObjectId { value.toInt() });
+        return QVariant::fromValue(ObjectId(value.toInt()));
 
     QVariant variant(value);
     variant.convert(type);

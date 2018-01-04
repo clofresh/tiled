@@ -144,7 +144,7 @@ QString VariantPropertyManager::valueText(const QtProperty *property) const
                 foreach(const ObjectGroup *group, objectGroups) {
                     foreach (const MapObject *object, group->objects())
                     {
-                        if (object->id() == id.id) {
+                        if (object->id() == id.id()) {
                             QString label = QStringLiteral("%1: ").arg(QString::number(object->id()));
                             if (object->name().length())
                                 label.append(object->name());
@@ -158,7 +158,7 @@ QString VariantPropertyManager::valueText(const QtProperty *property) const
                     }
                 }
             }
-            return QStringLiteral("%1: Object not found").arg(QString::number(id.id));
+            return QStringLiteral("%1: Object not found").arg(QString::number(id.id()));
         }
 
         if (typeId == filePathTypeId()) {
