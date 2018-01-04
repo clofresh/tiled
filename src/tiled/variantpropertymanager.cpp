@@ -149,7 +149,7 @@ QString VariantPropertyManager::valueText(const QtProperty *property) const
                             if (object->name().length())
                                 label.append(object->name());
                             else
-                                label.append(QStringLiteral("Unnamed object"));
+                                label.append(QStringLiteral(tr("Unnamed object")));
 
                             if (object->type().length())
                                 label.append(QStringLiteral(" (%1)").arg(object->type()));
@@ -158,7 +158,7 @@ QString VariantPropertyManager::valueText(const QtProperty *property) const
                     }
                 }
             }
-            return QStringLiteral("%1: Object not found").arg(QString::number(id.id()));
+            return QStringLiteral(tr("%1: Object not found")).arg(QString::number(id.id()));
         }
 
         if (typeId == filePathTypeId()) {
