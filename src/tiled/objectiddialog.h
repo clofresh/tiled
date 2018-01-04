@@ -55,7 +55,6 @@ private slots:
     void onTextChanged(const QString &text);
     void onItemSelectionChanged();
     void onItemDoubleClicked(QTableWidgetItem * item);
-    void onButtonClicked(bool checked);
 };
 
 } // namespace Internal

@@ -74,7 +74,6 @@ ObjectIdDialog::ObjectIdDialog(QWidget *parent)
     connect(mUi->lineEdit, &QLineEdit::textChanged, this, &ObjectIdDialog::onTextChanged);
     connect(mUi->tableWidget, &QTableWidget::itemSelectionChanged, this, &ObjectIdDialog::onItemSelectionChanged);
     connect(mUi->tableWidget, &QTableWidget::itemDoubleClicked, this, &ObjectIdDialog::onItemDoubleClicked);
-    connect(mUi->pushButton, &QPushButton::clicked, this, &ObjectIdDialog::onButtonClicked);
 }
 
 ObjectIdDialog::~ObjectIdDialog()
@@ -98,7 +97,7 @@ void ObjectIdDialog::setId(const int id)
         foreach (QTableWidgetItem *item, items) {
             if (item->column() == 0) {
                 tableWidget->selectRow(item->row());
-                lineEdit->setText(QStringLiteral(""));
+                lineEdit->clear();
                 break;
             }
         }
@@ -151,14 +150,6 @@ void ObjectIdDialog::onItemDoubleClicked(QTableWidgetItem * item)
     Q_UNUSED(item);
     accept();
 }
-
-void ObjectIdDialog::onButtonClicked(bool checked)
-{
-    Q_UNUSED(checked);
-    mUi->lineEdit->clear();
-    mUi->tableWidget->clearSelection();
-}
-
 
 void ObjectIdDialog::changeEvent(QEvent *e)
 {
